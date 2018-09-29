@@ -1,20 +1,24 @@
+// @flow
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   state = {
-    message: 'Hello Genn'
-  }
-  componentDidMount() {
+    message: "Hello Genn"
+  };
+  componentDidMount() {}
+  onReset = () => {
+    // this.setState({ message: process.env.PORT });
+    console.log(process.env);
     
   }
-
-  onMessageChange = (e) => {
+  onMessageChange = e => {
     console.log('make a change');
+    // console.log(styles);
     
-    this.setState({message: e.target.value})
-  }
+    this.setState({ message: e.target.value });
+  };
   render() {
     return (
       <div className="App">
@@ -22,14 +26,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, say {this.state.message}.
-        </p>
+        <p className={`error`}>To get started, say {this.state.message}.</p>
         <p>
-          <input
-            value={this.state.message}
-            onChange={this.onMessageChange}
-          />
+          <input value={this.state.message} onChange={this.onMessageChange} />
+          <button onClick={this.onReset}>RESET</button>
         </p>
       </div>
     );
