@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.0",
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
     "node-sass": "^4.9.3",
@@ -12,6 +13,8 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -28,4 +31,5 @@
       "git add"
     ]
   },
+  "homepage": "https://genncai.github.io/my-app"
 }
